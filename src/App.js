@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Route , BrowserRouter } from 'react-router-dom';
+import Navigationbar from './components/Navigationbar';
+import ChannelDoctor from './Pages/ChannelDoctor';
+import SidenavBarDoctor from './components/SidenavBarDoctor';
+import MyChannellings from './Pages/MyChannellings';
+import MyAppoinments from './Pages/MyAppoinments';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+import { userReducer } from './store/reducers/user.reducer';
+import { appoinmentReducer } from './store/reducers/appoinment.reducer';
+import thunk from 'redux-thunk';
+
+//redux store
+const store = createStore(combineReducers({ userReducer: userReducer, appoinmentReducer: appoinmentReducer }), applyMiddleware(thunk)); 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+          <Route path={'/'} exact>
+            <Navigationbar />
+          </Route>
+          <Route path={'/channel'} exact>
+            <ChannelDoctor/>
+        </Route>
+        <Route path={'/doctor'} exact>
+            <SidenavBarDoctor>
+                <MyChannellings/>
+            </SidenavBarDoctor>
+        </Route>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
