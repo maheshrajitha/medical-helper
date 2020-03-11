@@ -23,8 +23,9 @@ function App() {
           <Route path={'/'} exact>
             <Navigationbar />
           </Route>
-          <Route path={'/channel'} exact>
-            <ChannelDoctor/>
+        <Route path={'/channel'} exact>
+          <Navigationbar/>
+          <ChannelDoctor/>
         </Route>
         <Route path={'/doctor'} exact>
             <SidenavBarDoctor>

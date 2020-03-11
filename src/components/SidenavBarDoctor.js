@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container , Row , Col, Navbar, Dropdown, Badge } from 'react-bootstrap';
+import { Container , Row , Col, Navbar, Dropdown, Badge , NavDropdown } from 'react-bootstrap';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
 import DropdownItem from 'react-bootstrap/DropdownItem';
 import DropdownToggle from 'react-bootstrap/DropdownToggle';
@@ -17,12 +17,13 @@ const SidenavBarDoctor = (props) => (
             <Col sm={10}>
                 <Navbar className={'mb-3'} bg={'light'}>
                     <div className={'justify-content-end d-flex w-100'}>
-                        <Dropdown className={'mr-5'}>
-                            <DropdownToggle size={'sm'} variant={'light'}>
+                        <Dropdown className={'mr-5 h-10'}>
+                            <DropdownToggle style={{borderRadius : 50}} size={'sm'} variant={'light'}>
                                 <i className="far fa-lg fa-bell"></i>
-                                <Badge className={'ml-2'} variant={'secondary'}>6</Badge>
+                                <span className={'badge badge-pill badge-light'} variant={'secondary'}>6</span>
                             </DropdownToggle>
                             <DropdownMenu alignRight>
+                                <Dropdown.Header>New Channellings</Dropdown.Header>
                                 <DropdownItem>
                                     i 1
                                 </DropdownItem>
