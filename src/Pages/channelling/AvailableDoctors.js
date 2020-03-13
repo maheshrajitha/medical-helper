@@ -1,11 +1,12 @@
 import React from 'react';
 import { Table , Spinner, Button , SafeAnchor } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 let docs = [{ name: 'doc 1' }, { name: 'doc 2' }];
 
 const AvailableDoctors = (props) => (
-    docs.length === 0 ? <Spinner animation={'border'} variant={'dark'} className={props.className} /> :<Table responsive bordered>
+    props.doctorsList.length === 0 ? <Spinner animation={'border'} variant={'dark'} className={props.className} /> :<Table responsive bordered>
         <thead>
             <tr>
                 <th>Doctor Name</th>
@@ -13,13 +14,13 @@ const AvailableDoctors = (props) => (
             </tr>
         </thead>
         <tbody>
-            {docs.map(doctor => (
+            {props.doctorsList.map(doctor => (
                 <tr key={doctor.name}>
                     <td>
                         {doctor.name}
                     </td>
                     <td>
-                        <a href={'nbjhkj'} className={'btn btn-outline-dark btn-sm'}>Channel</a>
+                        <Link to={`channel/${doctor.name}`} className={'btn btn-outline-dark btn-sm'}>Channel</Link>
                     </td>
                 </tr>
             ))}
@@ -36,4 +37,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps) (AvailableDoctors)
+export default connect(mapStateToProps) (AvailableDoctors);

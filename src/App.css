@@ -62,7 +62,8 @@ html,body ,#root{
   background-image: url(assets/primary-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 .bg-opacity-primary{
@@ -74,10 +75,16 @@ html,body ,#root{
 .shadow {
   box-shadow: rgb(170, 152, 152) 5px 5px 5px;
 }
+
 .over-lay-form {
   position: absolute;
-  top: 70%;
+  top: 60%;
   text-align: center;
+}
+.over-lay{
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
 }
 .over-lay-text{
   position: absolute;
@@ -85,7 +92,6 @@ html,body ,#root{
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3);
 }
-
 .theme-text{
   /* scale: 1.5;*/
   /* transition: 2s;
@@ -100,7 +106,14 @@ html,body ,#root{
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
-
+.social-icons{
+  scale: 0.8;
+  transition: 2s;
+}
+.social-icons:hover{
+  scale: 1;
+  transition: 2s;
+}
 @keyframes animate {
   0% {
     background-position: -500%;
@@ -108,5 +121,14 @@ html,body ,#root{
 
   100% {
     background-position: 500%;
+  }
+}
+
+
+@media screen and (max-width: 900px){
+  .over-lay-form{
+    position: absolute;
+    top: 25%;
+    text-align: center;
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Card , Form, Button, FormControl, Alert } from 'react-bootstrap';
 import primaryImg from '../assets/primary-img.jpg';
 import AvailableDoctors from './channelling/AvailableDoctors';
+import Footer from '../components/Footer';
 
 class ChannelDoctor extends Component{
     state={patientDetails : false}
@@ -16,24 +17,16 @@ class ChannelDoctor extends Component{
     render() {
         return (
             <Container className={'h-100'}>
-                <div className={'w-100 position-relative'}>
-                    <img src={primaryImg} className={'img-fluid'}/>
-                    <div className={'over-lay-text d-flex align-items-center justify-content-center text-center h-100 w-100'}>
-                        <div>
-                            <h1 className={'text-white'}>Caring For Life</h1> 
-                            <h4 className={'font-weight-bold text-white'}>
-                                F i n d &nbsp; Y o u r &nbsp; D o c t o r
-                            </h4>
-                        </div>
-                    </div>
-                    <div className={'over-lay-form w-100 h-75 d-flex justify-content-center'}>
-                        <Card className={'w-75 h-100 round shadow'}>
-                            <Alert className={'mb-5'} variant={'info'}>Enter Your Symptoms We Will Find A Doctor For You ...</Alert>
-                            <Card.Body className={'h-100'}>
-                                <Form id={'symptomForm'} className={'h-100'}>
+                <div className={'w-100 h-100 position-relative'}>
+                    <img src={primaryImg} alt={'bg'} className={'img-fluid'} />
+                    <div className={'over-lay-form d-flex justify-content-center align-items-start w-100 h-100'}>
+                        <Card className={'bg-white round shadow h-75 w-75'}>
+                            <Card.Header>Channel Your Doctor</Card.Header>
+                            <Card.Body className={'d-flex align-items-center justify-content-center h-100 w-100'}>
+                                <Form id={'symptomForm'} className={'w-100'}>
                                     <Form.Group>
-                                        <Form.Label>Type Symptom 1</Form.Label>
-                                        <FormControl type={'text'} className={'font-weight-bold'} id={'symptomOne'} placeholder={'Type Symptom 1'} size={'sm'} />
+                                        <Form.Label>Symptom One</Form.Label>
+                                        <Form.Control type={'text'} placeholder={'Type Symptom One'} id={'symptomOne'} size={'sm'}/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Type Symptom 2</Form.Label>

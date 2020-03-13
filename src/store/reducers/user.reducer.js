@@ -2,7 +2,8 @@ import { LOGIN , GET_AVAILABLE_DOCTOR } from '../actiontypes/user.actionType';
 
 let initialState = {
     loggedUser: null,
-    doctorsList : []
+    doctorsList: [],
+    doctor: {name : 'mahesh'}
 }
 
 export const userReducer = (state =initialState , action) => {
