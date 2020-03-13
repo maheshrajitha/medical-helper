@@ -1,1 +1,2 @@
 export const LOGIN = 'LOGIN';
+export const GET_AVAILABLE_DOCTOR = 'GET_AVAILABLE_DOCTOR';

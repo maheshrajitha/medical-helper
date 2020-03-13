@@ -1,1 +1,1 @@
-export GET_ALL_ACTIONS = 'GET_ALL_ACTIONS';
+export const GET_ALL_ACTIONS = 'GET_ALL_ACTIONS';

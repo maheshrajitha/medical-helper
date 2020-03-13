@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { Container, Card , Form, Button, FormControl } from 'react-bootstrap';
+import { Container, Card , Form, Button, FormControl, Alert } from 'react-bootstrap';
 import primaryImg from '../assets/primary-img.jpg';
+import AvailableDoctors from './channelling/AvailableDoctors';
 
 class ChannelDoctor extends Component{
+    state={patientDetails : false}
     constructor(props) {
         super(props);
     }
 
+    nextButtonHandler = () => {
+        this.setState({ patientDetails: true });
+        document.getElementById('symptomForm').classList.add('d-none');
+    }
     render() {
         return (
             <Container className={'h-100'}>
@@ -20,10 +26,11 @@ class ChannelDoctor extends Component{
                             </h4>
                         </div>
                     </div>
-                    <div className={'over-lay-form w-100 d-flex justify-content-center'}>
-                        <Card className={'w-75 round shadow'}>
-                            <Card.Body>
-                                <Form>
+                    <div className={'over-lay-form w-100 h-75 d-flex justify-content-center'}>
+                        <Card className={'w-75 h-100 round shadow'}>
+                            <Alert className={'mb-5'} variant={'info'}>Enter Your Symptoms We Will Find A Doctor For You ...</Alert>
+                            <Card.Body className={'h-100'}>
+                                <Form id={'symptomForm'} className={'h-100'}>
                                     <Form.Group>
                                         <Form.Label>Type Symptom 1</Form.Label>
                                         <FormControl type={'text'} className={'font-weight-bold'} id={'symptomOne'} placeholder={'Type Symptom 1'} size={'sm'} />
@@ -41,9 +48,10 @@ class ChannelDoctor extends Component{
                                         <FormControl type={'text'} className={'font-weight-bold'} id={'symptomTwo'} placeholder={'Type Symptom 2'} size={'sm'}/>
                                     </Form.Group>
                                     <Form.Group>
-                                        <Button variant={'primary'} className={'w-25'} size={'sm'}>Next</Button>
+                                        <Button onClick={this.nextButtonHandler} variant={'primary'} className={'w-25'} size={'sm'}>Next</Button>
                                     </Form.Group>
                                 </Form>
+                                {this.state.patientDetails && <AvailableDoctors/>}
                             </Card.Body>
                         </Card>
                     </div>
@@ -52,4 +60,5 @@ class ChannelDoctor extends Component{
         );
     }
 }
+
 export default ChannelDoctor;
