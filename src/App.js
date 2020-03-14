@@ -11,7 +11,7 @@ import { appoinmentReducer } from './store/reducers/appoinment.reducer';
 import thunk from 'redux-thunk';
 import Footer from './components/Footer';
 import router from './router/Router';
-import ChannelDoctor from './Pages/channelling/ChannelDoctor';
+import SidenavBarReceptionist from './components/SidenavBarReceptionist';
 
 //redux store
 const store = createStore(combineReducers({ userReducer: userReducer, appoinmentReducer: appoinmentReducer }), applyMiddleware(thunk)); 
@@ -29,6 +29,16 @@ function App() {
                 </SidenavBarDoctor>
               </Route>
             );
+          else if (route.reception) {
+            return (
+              <Route exact path={route.path}>
+                <SidenavBarReceptionist>
+                  <route.component/>
+                </SidenavBarReceptionist>
+                <Footer/>
+              </Route>
+            );
+          }
           else
             return (
               <Route exact path={route.path}>

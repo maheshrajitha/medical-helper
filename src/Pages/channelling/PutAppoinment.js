@@ -5,10 +5,6 @@ import secondaryImg from '../../assets/primary-img2.jpg';
 import { withRouter } from 'react-router-dom';
 
 class PutAppoinment extends React.Component{
-    constructor(props) {
-        super(props);
-        
-    }
 
     componentDidMount() {
         //this.props.location.search;
@@ -27,7 +23,7 @@ class PutAppoinment extends React.Component{
                             <Card.Body>
                                 <Row>
                                     <Col md={7}>
-                                        <img src={secondaryImg} className={'img-fluid'} aly={'secondaryimg'}/>
+                                        <img src={secondaryImg} className={'img-fluid'} alt={'secondaryimg'}/>
                                     </Col>
                                     <Col md={5}>
                                         <Form>

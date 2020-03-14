@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Card , Form, Button, FormControl, Alert, Spinner } from 'react-bootstrap';
+import { Container, Card , Form, Button, FormControl, Spinner } from 'react-bootstrap';
 import AvailableDoctors from './AvailableDoctors';
-
 class ChannelDoctor extends Component{
 
     state={patientDetails : false , loading : true}
-    constructor(props) {
-        super(props);
-    }
-
     nextButtonHandler = () => {
         this.setState({ patientDetails: true });
         document.getElementById('symptomForm').classList.add('d-none');
@@ -26,7 +21,7 @@ class ChannelDoctor extends Component{
         } else {
             return (
             <Container fluid className={'img-bg-primary d-flex justify-content-center align-items-center'}>
-                <Card className={'w-50 shadow round h-75 bg-white'}>
+                <Card className={'w-75 shadow round h-75 bg-white'}>
                     <Card.Body className={'w-100 text-center d-flex justify-content-center align-items-center'}>
                         <Form id={'symptomForm'} className={'h-100 w-100'}>
                                 <Form.Group>

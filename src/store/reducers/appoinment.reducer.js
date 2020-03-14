@@ -1,5 +1,9 @@
 let initialState = {
-    appoinments : []
+    appoinments: [{
+        doctorName: 'Mahesh Rajitha Bandara',
+        patientName: 'Test Patient',
+        time: '06 : 00 PM'
+    }]
 }
 export const appoinmentReducer = (state = initialState , action) => {
     switch (action.type) {

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Table , Spinner, Button , SafeAnchor } from 'react-bootstrap';
+import { Table , Spinner } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-let docs = [{ name: 'doc 1' }, { name: 'doc 2' }];
 
 const AvailableDoctors = (props) => (
     props.doctorsList.length === 0 ? <Spinner animation={'border'} variant={'dark'} className={props.className} /> :<Table responsive bordered>

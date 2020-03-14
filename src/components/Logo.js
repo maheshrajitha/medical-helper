@@ -1,10 +1,10 @@
 import React from 'react';
 import logoMain from '../assets/logo-main.png'
 
-const Logo = ({ sm }) => (
+const Logo = ({ sm , light  }) => (
     <>
-        <img src={logoMain} width={sm ? '5%' : '20%'} height={sm ? '5%' : '20%'} alt={'logo'} />
-        {sm ? <>&nbsp;Channel Doc</> : <h2>Channel Doc</h2>}
+        <img src={logoMain} width={sm ? '7%' : '20%'} height={sm ? '7%' : '20%'} alt={'logo'} />
+        {sm ? <h5 className={light ? 'text-light': 'text-dark'}>&nbsp;Channel Doc</h5> : <h2 className={light ? 'text-white' :'text-dark'}>Channel Doc</h2>}
     </>
 );
 
