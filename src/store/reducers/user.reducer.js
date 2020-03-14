@@ -2,7 +2,7 @@ import { LOGIN , GET_AVAILABLE_DOCTOR } from '../actiontypes/user.actionType';
 
 let initialState = {
     loggedUser: null,
-    doctorsList: [],
+    doctorsList: [{name : 'doc1'}],
     doctor: {name : 'mahesh'}
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Table, Dropdown, Badge } from 'react-bootstrap';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
-import { login } from '../store/actions/user.action';
+import { login } from '../../store/actions/user.action';
 import { connect } from 'react-redux';
 
 let channellings = [
