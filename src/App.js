@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 import Footer from './components/Footer';
 import router from './router/Router';
 import SidenavBarReceptionist from './components/SidenavBarReceptionist';
-
+import MainLayout from './layouts/MainLayout';
 //redux store
 const store = createStore(combineReducers({ userReducer: userReducer, appoinmentReducer: appoinmentReducer }), applyMiddleware(thunk)); 
 
@@ -42,9 +42,9 @@ function App() {
           else
             return (
               <Route exact path={route.path}>
-                <Navigationbar />
-                <route.component/>
-                <Footer/>
+                <MainLayout>
+                  <route.component/>
+                </MainLayout>
               </Route>
             );
         })}
