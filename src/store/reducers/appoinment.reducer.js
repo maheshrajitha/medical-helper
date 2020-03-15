@@ -11,6 +11,13 @@ export const appoinmentReducer = (state = initialState , action) => {
             state.appoinments = action.appoinments;
             return {...state}
         default:
+            state.appoinments = [];
+            for (let i = 1; i < 0; i++)
+                state.appoinments.push({
+                    doctorName: `Doc ${i}`,
+                    patientName: `Patient ${i}`,
+                    time : `0${i} : 00 AM`
+                })
             return state
     }
 }

@@ -5,9 +5,12 @@ import DropdownItem from 'react-bootstrap/DropdownItem';
 import DropdownToggle from 'react-bootstrap/DropdownToggle';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
 
+let date = new Date();
+const months = ['January','Februaray','March','April','May','Jume','July','August','September','Octomber','November','December']
 const Appoinments = (props) => (
     props.appoinments.length < 1 ? <Container fluid>
-        <h5>There are no Appoinments Yet</h5>
+        <h3>Today Is {date.getDate().toString()} of {months[date.getMonth()]}</h3>
+        <h5 className={'text-muted font-weight-light'}>There are no Appoinments Yet</h5>
     </Container> 
         :
         <Container fluid>

@@ -41,7 +41,7 @@ class MyChannellings extends React.Component{
                         </Dropdown>
                     </div>
                 </div>
-                <Table responsive striped bordered hover>
+                <Table responsive  bordered variant={'light'}>
                     <thead>
                         <tr>
                             <th>Date</th>
@@ -51,7 +51,7 @@ class MyChannellings extends React.Component{
                         </tr>
                     </thead>
                     <tbody>
-                        {channellings.map(c => {
+                        {this.props.channellings.map(c => {
                             return (
                                 <tr key={c.time}>
                                     <td>{c.date}</td>
@@ -62,11 +62,11 @@ class MyChannellings extends React.Component{
                                         </Badge>
                                     </td>
                                     <td>
-                                        {c.symtams.length < 0 ? c.symtams.map(s => {
+                                        {c.symptoms.length < 0 ? c.symptoms.map(s => {
                                             return (
                                                 s
                                             );
-                                        }):c.symtams}
+                                        }):c.symptoms}
                                     </td>
                                 </tr>
                             );
@@ -80,7 +80,8 @@ class MyChannellings extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        user : state.userReducer.loggedUser
+        user: state.userReducer.loggedUser,
+        channellings : state.userReducer.channellings
     }
 }
 

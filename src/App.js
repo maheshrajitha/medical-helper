@@ -2,14 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route , BrowserRouter } from 'react-router-dom';
-import Navigationbar from './components/Navigationbar';
 import SidenavBarDoctor from './components/SidenavBarDoctor';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { userReducer } from './store/reducers/user.reducer';
 import { appoinmentReducer } from './store/reducers/appoinment.reducer';
 import thunk from 'redux-thunk';
-import Footer from './components/Footer';
 import router from './router/Router';
 import SidenavBarReceptionist from './components/SidenavBarReceptionist';
 import MainLayout from './layouts/MainLayout';
@@ -35,7 +33,6 @@ function App() {
                 <SidenavBarReceptionist>
                   <route.component/>
                 </SidenavBarReceptionist>
-                <Footer/>
               </Route>
             );
           }

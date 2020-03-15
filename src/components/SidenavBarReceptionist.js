@@ -6,10 +6,10 @@ import DropdownToggle from 'react-bootstrap/DropdownToggle';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 const SidenavBarReceptionist = (props) => (
-    <Container fluid className={'h-100'}>
-        <Row className={'h-100'}>
-            <Col md={2} className={'h-100 primary-bg-color'}>
-                <div className={'w-100 mt-3 mb-4'}>
+    <Container fluid>
+        <Row style={{minHeight : '100vh'}}>
+            <Col md={2} className={'h-auto primary-bg-color'}>
+                <div className={'w-100 mt-3'}>
                     <Logo light sm/>
                 </div>
                 <ul className={'nav flex-column'}>
@@ -20,7 +20,7 @@ const SidenavBarReceptionist = (props) => (
                     </li>
                 </ul>
             </Col>
-            <Col className={'h-100'} md={10}>
+            <Col className={'h-auto content-bg-primary'} md={10}>
                 <Navbar className={'mb-5'} variant={'light'} bg={'light'}>
                     <div className={'w-100 d-flex justify-content-end'}>
                         <span className={'d-none d-sm-inline-block'}>

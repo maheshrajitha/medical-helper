@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Card , Form, Button, FormControl, Spinner } from 'react-bootstrap';
 import AvailableDoctors from './AvailableDoctors';
-import Footer from '../../components/Footer';
 class ChannelDoctor extends Component{
 
     state={patientDetails : false , loading : true}
@@ -21,11 +20,10 @@ class ChannelDoctor extends Component{
             );
         } else {
             return (
-                <React.Fragment>
                 <Container fluid className={'img-bg-primary d-flex justify-content-center align-items-center'}>
-                    <Card className={'w-75 shadow round bg-white'} style={{minHeight : '75%'}}>
+                    <Card className={'w-75 shadow round bg-white'}>
                         <Card.Body className={'w-100 text-center'}>
-                            <Form id={'symptomForm'} style={{minHeight : '100%'}}>
+                            <Form id={'symptomForm'}>
                                     <Form.Group>
                                         <Form.Label>Symptom One</Form.Label>
                                         <Form.Control type={'text'} placeholder={'Type Symptom One'} id={'symptomOne'} size={'sm'}/>
@@ -49,8 +47,7 @@ class ChannelDoctor extends Component{
                                 {this.state.patientDetails && <AvailableDoctors/>}
                         </Card.Body>
                     </Card>
-                    </Container>
-                </React.Fragment>
+                </Container>
             );
         }
     }
